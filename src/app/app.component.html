@@ -1,0 +1,17 @@
+<div *ngIf="expression; else: elseCase">
+  <app-big-auto></app-big-auto>
+</div>
+
+<ng-template #elseCase>
+  <app-big-plane></app-big-plane>
+</ng-template>
+<button (click)="expression = !expression">Toggle</button>
+
+<div *ngIf="!expression; else:elseCase1">
+  <app-big-ship></app-big-ship>
+</div>
+
+<ng-template #elseCase1>
+  <app-big-plane></app-big-plane>
+</ng-template>
+<button (click)="expression = !expression">Toggle</button>
